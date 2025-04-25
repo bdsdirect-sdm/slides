@@ -1,0 +1,30 @@
+.slides {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    width: 100px;
+    height: 100px;
+    margin: 0% 2%;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.slides:hover {
+    box-shadow: 0 8px 240px rgba(0, 0, 0, 0.25);
+}
+
+.inner-div {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0px;
+}
+
+.main-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
