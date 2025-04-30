@@ -1,6 +1,6 @@
 .slides {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
     width: 100px;
     height: 100px;
     margin: 0% 2%;
@@ -10,11 +10,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("https://plus.unsplash.com/premium_photo-1672582776474-fc85ebaa1b73?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8");
+    background-size: cover;
+    background-position: center;
 }
 
-
-.slides:hover {
-    box-shadow: 0 8px 240px rgba(0, 0, 0, 0.25);
+/* Instead of .slides:hover we use .slides.hovered */
+.slides.hovered {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    background-color: #ffcccc;
+    /* Light red background on hover */
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
 }
 
 .inner-div {
@@ -27,4 +34,41 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.button-main {
+    padding: 12px 24px;
+    /* Balanced vertical and horizontal padding */
+    border: 2px solid white;
+    /* Slightly thicker border for better visibility */
+    color: white;
+    /* Text color */
+    background-color: #4a4a4a;
+    /* Slightly lighter gray for smoother look */
+    border-radius: 999px;
+    /* Full pill shape */
+    font-size: 16px;
+    /* Medium readable font */
+    font-weight: 500;
+    /* Semi-bold text */
+    cursor: pointer;
+    /* Cursor pointer on hover */
+    transition: all 0.3s ease;
+    /* Smooth hover animation */
+}
+
+.button-main:hover {
+    background-color: white;
+    /* White background on hover */
+    color: #4a4a4a;
+    /* Gray text on hover */
+    border-color: #4a4a4a;
+    /* Match border color on hover */
+}
+
+.map {
+    color: #4a4a4a;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
 }

@@ -1,33 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react';
 import './Slides.css';
+import Button from './Button';
+import { useNavigate } from 'react-router-dom';
 
 function Slides() {
+
+    const navigate = useNavigate();
+
+    const [hoveredSlide, setHoveredSlide] = useState(null);
+
+    const handleMouseEnter = (id) => {
+        // console.log("Mouse entered:", id);
+        setHoveredSlide(id);
+    };
+
+    const handleMouseLeave = () => {
+        // console.log("Mouse left");
+        setHoveredSlide(null);
+    };
+
+    const slidesData = [
+        ['slide1', 'slide2', 'slide3', 'slide4'],
+        ['slide5', 'slide6', 'slide7', 'slide8'],
+        ['slide9', 'slide10', 'slide11', 'slide12']
+    ];
+
     return (
-        <div class="main-div">
+        <div className="main-div">
+            {slidesData.map((slideGroup, groupIndex) => (
+                <div key={groupIndex} className="inner-div">
+                    {slideGroup.map((slideId, slideIndex) => (
+                        <div
+                            key={`${groupIndex}-${slideIndex}`}
+                            onMouseEnter={() => handleMouseEnter(slideId)}
+                            onMouseLeave={handleMouseLeave}
+                            className={`slides ${hoveredSlide === slideId ? 'hovered' : ''}`}
+                        >
+                            {slideIndex + 1}
+                        </div>
+                    ))}
+                </div>
+            ))}
+            <br />
+            <Button onClick={() => navigate('/button')} />
 
-            <div class="inner-div">
-                <div class="slides">1</div>
-                <div class="slides">2</div>
-                <div class="slides">1</div>
-                <div class="slides">2</div>
-            </div>
+            <Button onClick={() => navigate('/hello')} />
 
-            <div class="inner-div">
-                <div class="slides">3</div>
-                <div class="slides">4</div>
-                <div class="slides">3</div>
-                <div class="slides">4</div>
-            </div>
-
-            <div class="inner-div">
-                <div class="slides">5</div>
-                <div class="slides">6</div>
-                <div class="slides">5</div>
-                <div class="slides">6</div>
-            </div>
 
         </div>
-    )
+    );
 }
 
-export default Slides
+export default Slides;
