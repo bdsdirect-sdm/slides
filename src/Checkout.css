@@ -1,0 +1,110 @@
+.checkout-container {
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    width: 350px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.credit-card {
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    border-radius: 15px;
+    padding: 1.5rem;
+    color: white;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(221, 36, 118, 0.4);
+}
+
+.chip {
+    width: 40px;
+    height: 30px;
+    background-color: gold;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.card-bank {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-weight: bold;
+}
+
+.card-number {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.card-holder,
+.card-expiry {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.payment-form .input-field {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.input-small {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    max-width: 22%;
+}
+
+.pay-btn {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: #28a745;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.pay-btn:hover {
+    background-color: #218838;
+}
+
+.product-summary {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.summary-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0.5rem 0;
+}
