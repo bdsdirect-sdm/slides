@@ -31,7 +31,19 @@ function CartPage() {
                 pauseOnHover: true,
                 draggable: true,
             });
-        } else {
+        }
+        else if (promoCode.trim().toUpperCase() === 'KHALID') {
+            setDiscountApplied(true);
+            toast.success('Promo code applied! 100% discount', {
+                position: 'top-right',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
+        }
+        else {
             toast.error('Invalid promo code', {
                 position: 'top-right',
                 autoClose: 3000,

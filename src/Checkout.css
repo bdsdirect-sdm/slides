@@ -4,24 +4,112 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .checkout-card {
     background-color: #fff;
     border-radius: 15px;
-    padding: 2rem;
-    width: 350px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 400px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.card-inner {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    perspective: 1000px;
+    margin-bottom: 1.5rem;
 }
 
 .credit-card {
-    background: linear-gradient(135deg, #ff512f, #dd2476);
+    width: 100%;
+    height: 100%;
     border-radius: 15px;
-    padding: 1.5rem;
+    padding: 1.25rem;
     color: white;
-    margin-bottom: 2rem;
-    position: relative;
-    box-shadow: 0 10px 25px rgba(221, 36, 118, 0.4);
+    transition: transform 0.6s;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.front {
+    background: linear-gradient(135deg, #2E77BC, #1E5A99);
+    z-index: 2;
+    transform: rotateY(0deg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-bank {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    background: white;
+    color: #1E5A99;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-number {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+    word-spacing: 2px;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-holder,
+.card-expiry {
+    display: inline-block;
+    width: 48%;
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.9;
+    margin-top: 4px;
+}
+
+.card-logo {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    text-align: right;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+    line-height: 1;
+}
+
+.back {
+    background: #333;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.card-inner.flipped .front {
+    transform: rotateY(180deg);
+}
+
+.card-inner.flipped .back {
+    transform: rotateY(360deg);
+    z-index: 2;
 }
 
 .chip {
@@ -30,25 +118,6 @@
     background-color: gold;
     border-radius: 5px;
     margin-bottom: 1rem;
-}
-
-.card-bank {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-weight: bold;
-}
-
-.card-number {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
-}
-
-.card-holder,
-.card-expiry {
-    font-size: 0.9rem;
-    opacity: 0.9;
 }
 
 .payment-form .input-field {
@@ -63,8 +132,9 @@
 
 .row {
     display: flex;
-    justify-content: space-between;
     gap: 0.5rem;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 .input-small {
@@ -73,11 +143,11 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 0.95rem;
-    max-width: 22%;
+    box-sizing: border-box;
+    max-width: 30%;
 }
 
 .pay-btn {
-    margin-top: 1rem;
     width: 100%;
     background-color: #28a745;
     border: none;
@@ -107,4 +177,32 @@
     height: 100px;
     object-fit: contain;
     margin: 0.5rem 0;
+}
+
+.cvv-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.cvv-value {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 480px) {
+    .checkout-card {
+        padding: 1rem;
+        max-width: 90%;
+    }
+
+    .card-number {
+        font-size: 1rem;
+    }
+
+    .card-holder,
+    .card-expiry {
+        display: block;
+        width: 100%;
+        margin-top: 4px;
+    }
 }
